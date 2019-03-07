@@ -497,6 +497,7 @@ $upgrade_queries["1.32.0"][] = "ALTER TABLE `settings` ADD `dbversion` INT(8)  N
 $upgrade_queries["1.4.0"]   = [];
 $upgrade_queries["1.4.0"][] = "-- Version update";
 $upgrade_queries["1.4.0"][] = "UPDATE `settings` set `version` = '1.4';";
+$upgrade_queries["1.4.0"][] = "ALTER TABLE `subnets` ADD `strictMode` BINARY(1)  NOT NULL  DEFAULT '1';";
 
 
 #
