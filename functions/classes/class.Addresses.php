@@ -1716,8 +1716,8 @@ class Addresses extends Common_functions {
 		else {
             $net = $this->Net_IPv4->parseAddress($subnet);
 
-            if ($net->network == $address) 									{ $this->Result->show("danger", _("Cannot add subnet as IP address!"), $die); return true; }
-            elseif ($net->broadcast == $address)							{ $this->Result->show("danger", _("Cannot add broadcast as IP address!"), $die); return true; }
+            if (($net->network == $address) && ($no_strict == true)) 									{ $this->Result->show("danger", _("Cannot add subnet as IP address!"), $die); return true; }
+            elseif (($net->broadcast == $address) && ($no_strict == true))							{ $this->Result->show("danger", _("Cannot add broadcast as IP address!"), $die); return true; }
 		}
 		# default
 		return false;
