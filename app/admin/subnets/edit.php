@@ -72,6 +72,7 @@ else {
     	$subnet_old_details['showName'] 	    = @$subnet_old_temp['showName'];          // inherit show name
     	$subnet_old_details['device'] 	        = @$subnet_old_temp['device'];            // inherit device
     	$subnet_old_details['permissions'] 	    = @$subnet_old_temp['permissions'];       // inherit permissions
+    	$subnet_old_details['strictMode'] 	= @$subnet_old_temp['strictMode'];     // inherit requests
     	$subnet_old_details['scanAgent'] 	    = @$subnet_old_temp['scanAgent'];         // inherit scanAgent
     	$subnet_old_details['pingSubnet'] 	    = @$subnet_old_temp['pingSubnet'];        // inherit pingSubnet
     	$subnet_old_details['discoverSubnet']   = @$subnet_old_temp['discoverSubnet'];    // inherit discovery
@@ -409,6 +410,18 @@ $("input[name='subnet']").change(function() {
     <tr>
 	    <td colspan="3"><hr></td>
     </tr>
+		
+	<?php //strict mode
+	$checked = @$subnet_old_details['strictMode']==1 ? "checked": "";
+	print '<tr>' . "\n";
+    	print '	<td>'._('Strict Mode').'</td>' . "\n";
+    	print '	<td>' . "\n";
+    	print '		<input type="checkbox" name="strictMode" class="input-switch-agents-ping" value="1" '.$checked.'>'. "\n";
+    	print '	</td>' . "\n";
+    	print '	<td class="info2">'._('Enable strict mode').'</td>' . "\n";
+    	print '</tr>';
+	?>
+		
 	<tr>
         <td class="middle"><?php print _('Mark as full'); ?></td>
         <td>
