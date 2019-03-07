@@ -277,6 +277,7 @@ CREATE TABLE `subnets` (
   `DNSrecords` TINYINT(1)  NULL  DEFAULT '0',
   `nameserverId` INT(11) NULL DEFAULT '0',
   `scanAgent` INT(11)  DEFAULT NULL,
+  `strictMode` BINARY(1)  NOT NULL  DEFAULT '1',
   `customer_id` INT(11) unsigned NULL default NULL,
   `isFolder` BOOL NULL  DEFAULT '0',
   `isFull` TINYINT(1)  NULL  DEFAULT '0',
